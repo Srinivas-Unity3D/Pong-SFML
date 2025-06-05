@@ -11,8 +11,9 @@ namespace Core
 	void GameWindowManager::CreateGameWindow()
 	{
 		game_window->create(
-			VideoMode(game_window_width, game_window_height),
-			game_title
+			VideoMode::getDesktopMode(),
+			game_title,
+			Style::Fullscreen
 		);
 	}
 
@@ -28,6 +29,7 @@ namespace Core
 
 	void GameWindowManager::render() 
 	{
-	
+		game_window->clear(Color(200, 50, 50, 255));
+		game_window->display();
 	}
 }
