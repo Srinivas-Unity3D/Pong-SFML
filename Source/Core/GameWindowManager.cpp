@@ -13,7 +13,7 @@ namespace Core
 		game_window->create(
 			VideoMode::getDesktopMode(),
 			game_title,
-			Style::Fullscreen
+			Style::Default
 		);
 	}
 

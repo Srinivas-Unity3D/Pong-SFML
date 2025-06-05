@@ -1,4 +1,5 @@
 #include "../../Header/Event/EventManager.h"
+#include <iostream>
 
 namespace Events 
 {
@@ -7,9 +8,16 @@ namespace Events
 		Event event;
 		while (game_window->pollEvent(event)) 
 		{
-			if (isKeyPressed(Keyboard::Escape))
+			if (isKeyPressed(Keyboard::Escape) || (event.type == Event::Closed))
 			{
 				game_window->close();
+			}
+
+			if (isLeftMouseClicked()) 
+			{
+				Vector2i position = Mouse::getPosition();
+
+				std::cout << "Left mouse clicked at: " << position.x << "," << position.y << std::endl;
 			}
 		}
 	}
@@ -18,5 +26,10 @@ namespace Events
 	{
 		
 		return Keyboard::isKeyPressed(key);
+	}
+
+	bool EventManager::isLeftMouseClicked() 
+	{
+		return Mouse::isButtonPressed(Mouse::Left);
 	}
 }
