@@ -11,7 +11,7 @@ namespace Core
 	void GameWindowManager::CreateGameWindow()
 	{
 		game_window->create(
-			VideoMode::getDesktopMode(),
+			VideoMode(game_window_width, game_window_height),
 			game_title,
 			Style::Default
 		);
@@ -29,7 +29,7 @@ namespace Core
 
 	void GameWindowManager::clearGameWindow() 
 	{
-		game_window->clear(Color(200, 50, 50, 255));
+		//game_window->clear(Color(200, 50, 50, 255)); // if want red window uncomment it
 	}
 
 	void GameWindowManager::displayGameWindow()
