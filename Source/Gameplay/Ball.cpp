@@ -1,8 +1,6 @@
 #include "../../Header/Gameplay/Ball.h"
 
 
-
-
 namespace Gameplay 
 {
 	Ball::Ball() 
@@ -33,6 +31,11 @@ namespace Gameplay
 
 	void Ball::update() 
 	{
-	
+		move();
+	}
+
+	void Ball::move() 
+	{
+		pong_ball_sprite.move(velocity);
 	}
 }
