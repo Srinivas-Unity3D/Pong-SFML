@@ -31,6 +31,6 @@ namespace Gameplay
 	{
 		player1->update(eventManager->isKeyPressed(Keyboard::W), eventManager->isKeyPressed(Keyboard::S));
 		player2->update(eventManager->isKeyPressed(Keyboard::Up), eventManager->isKeyPressed(Keyboard::Down));
-		ball->update();
+		ball->update(player1, player2);
 	}
 }
