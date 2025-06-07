@@ -38,6 +38,9 @@ namespace Gameplay
 		const float left_boundary = 0.0f;
 		const float right_boundary = 1280.0f;
 
+		bool had_left_collison = false;
+		bool had_right_collison = false;
+
 		//Center Position
 		const float center_position_x = 615.0f;
 		const float center_position_y = 325.0f;
@@ -56,6 +59,14 @@ namespace Gameplay
 		void updateDelayTime(float deltaTime);
 	public:
 		Ball();
+
+		bool isLeftCollisionOccurred();
+		void updateLeftCollisionState(bool value);
+
+		bool isRightCollisionOccurred();
+		void updateRightCollisionState(bool value);
+
+
 		void handlePaddleCollision(Paddle* player1, Paddle* player2);
 		void update(Paddle* player1, Paddle* player2, TimeService* timeService);
 		void render(RenderWindow* game_window);
