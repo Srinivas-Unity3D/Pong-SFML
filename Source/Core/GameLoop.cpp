@@ -1,8 +1,9 @@
 #include "../../Header/Core/GameLoop.h"
 #include <SFML/Graphics.hpp>
+#include "../../Header/Sound/SoundManager.h"
 
 using namespace sf;
-
+using namespace Sounds;
 
 namespace Core
 {
@@ -12,7 +13,8 @@ namespace Core
 		event_manager = new EventManager();
 		game_play_manager = new GameplayManager(event_manager);
 
-		
+		SoundManager::Initialize();
+		SoundManager::PlayBackgroundMusic();
 
 		game_window_manager->initialize();
 	
