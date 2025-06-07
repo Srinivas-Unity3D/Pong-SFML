@@ -38,9 +38,9 @@ namespace UI
 		game_window->draw(right_score_text);
 	}
 
-	string UIService::formatScore(int score)
+	string UIService::formatScore(string player, int score)
 	{
-		return (score < 10 ? "0" : "") + to_string(score);
+		return player + (score < 10 ? "0" : "") + to_string(score);
 	}
 
 	void UIService::incrementPlayer1Score()
@@ -55,7 +55,7 @@ namespace UI
 
 	void UIService::update()
 	{
-		left_score_text.setString(formatScore(player1_score));
-		right_score_text.setString(formatScore(player2_score));
+		left_score_text.setString(formatScore("P1: ", player1_score));
+		right_score_text.setString(formatScore("P2: ", player2_score));
 	}
 }
