@@ -2,11 +2,15 @@
 #include "SFML/Graphics.hpp"
 
 using namespace sf;
+using namespace Utility;
 
 namespace Gameplay 
 {
 	GameplayManager::GameplayManager(EventManager* manager)
 	{
+		time_service = new TimeService();
+		time_service->initialize();
+
 		initialize();
 		boundary = new Boundary();
 		eventManager = manager;
@@ -29,8 +33,10 @@ namespace Gameplay
 
 	void GameplayManager::update() 
 	{
-		player1->update(eventManager->isKeyPressed(Keyboard::W), eventManager->isKeyPressed(Keyboard::S));
-		player2->update(eventManager->isKeyPressed(Keyboard::Up), eventManager->isKeyPressed(Keyboard::Down));
-		ball->update(player1, player2);
+		time_service->update();
+
+		player1->update(eventManager->isKeyPressed(Keyboard::W), eventManager->isKeyPressed(Keyboard::S), time_service);
+		player2->update(eventManager->isKeyPressed(Keyboard::Up), eventManager->isKeyPressed(Keyboard::Down), time_service);
+		ball->update(player1, player2, time_service);
 	}
 }

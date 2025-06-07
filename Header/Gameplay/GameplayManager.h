@@ -3,8 +3,10 @@
 #include "Paddle.h"
 #include "../Event/EventManager.h"
 #include "../Boundary/Boundary.h"
+#include "../Utility/TimeService.h"
 
 using namespace Events;
+using namespace Utility;
 
 
 namespace Gameplay 
@@ -28,6 +30,7 @@ namespace Gameplay
 
 		Boundary* boundary;
 	public:
+		TimeService* time_service;
 		GameplayManager(EventManager* eventManager);
 		void render(RenderWindow* game_window);
 		void update();
