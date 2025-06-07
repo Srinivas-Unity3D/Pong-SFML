@@ -36,9 +36,9 @@ namespace Gameplay
 	void GameplayManager::update() 
 	{
 		time_service->update();
-
 		player1->update(eventManager->isKeyPressed(Keyboard::W), eventManager->isKeyPressed(Keyboard::S), time_service);
 		player2->update(eventManager->isKeyPressed(Keyboard::Up), eventManager->isKeyPressed(Keyboard::Down), time_service);
 		ball->update(player1, player2, time_service);
+		ui_service->update();
 	}
 }
