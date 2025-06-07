@@ -29,7 +29,8 @@ namespace Core
 
 	void GameWindowManager::clearGameWindow() 
 	{
-		game_window->clear(Color(200, 50, 50, 255)); // if want red window uncomment it
+		game_window->clear();
+		//game_window->clear(Color(200, 50, 50, 255)); // if want red window uncomment it
 	}
 
 	void GameWindowManager::displayGameWindow()

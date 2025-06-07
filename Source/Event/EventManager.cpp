@@ -13,12 +13,12 @@ namespace Events
 				game_window->close();
 			}
 
-			if (isLeftMouseClicked()) 
+			/*if (isLeftMouseClicked()) 
 			{
 				Vector2i position = Mouse::getPosition();
 
 				std::cout << "Left mouse clicked at: " << position.x << "," << position.y << std::endl;
-			}
+			}*/
 		}
 	}
 

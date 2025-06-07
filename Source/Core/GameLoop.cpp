@@ -10,7 +10,7 @@ namespace Core
 	{
 		game_window_manager = new GameWindowManager();
 		event_manager = new EventManager();
-		game_play_manager = new GameplayManager();
+		game_play_manager = new GameplayManager(event_manager);
 
 		
 
@@ -37,6 +37,6 @@ namespace Core
 
 	void GameLoop::update()
 	{
-		
+		game_play_manager->update();
 	}
 }
